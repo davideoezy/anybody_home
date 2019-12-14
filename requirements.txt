@@ -1,5 +1,3 @@
-mysql-connector-python
 arpreq
-gviz_api
 tzlocal
 paho-mqtt
