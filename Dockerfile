@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 WORKDIR /.
 COPY . /
 
-CMD [ "python", "./main_backend.py" ]
+CMD [ "python", "./somebody_home.py" ]
