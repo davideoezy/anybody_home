@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     # ---------------- Initialise variables ------------------
 
-    topic = "home/inside/presence"
+    topic = "home/inside/sensor/"
     measurement = "presence"
 
     # Broker details:
@@ -71,11 +71,15 @@ if __name__ == "__main__":
 
         #reading = "%s dev_1=%s,dev_2=%s,dev_3=%s,dev_4=%s" % (measurement, time_since_connected[0], time_since_connected[1], time_since_connected[2], time_since_connected[3])
         
-        dict_msg = {"dev_1":time_since_connected[0], "dev_2":time_since_connected[1], "dev_3":time_since_connected[2], "dev_4":time_since_connected[3]}
-        msg = json.dumps(dict_msg)
-        print(msg)
+        #dict_msg = {"dev_1":time_since_connected[0], "dev_2":time_since_connected[1], "dev_3":time_since_connected[2], "dev_4":time_since_connected[3]}
+        for i in range(1:5):
+            device = "device_" + str(i)
+            topic_device = topic + device
+            dict_msg = {device:time_since_connected[i]}
+            msg = json.dumps(dict_msg)
+            print(msg)
 
-        client.publish(topic,msg)
+            client.publish(topic_device,msg)
 
         time.sleep(30)
 
