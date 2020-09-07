@@ -1,0 +1,15 @@
+[Unit]
+Description=Python presence detector
+After=multi-user.target
+
+[Service]
+Type = simple
+ExecStart=/usr/bin/python3 -u /home/pi/git/anybody_home/somebody_home.py
+WorkingDirectory=/home/pi/git/anybody_home
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+User=pi
+
+[Install]
+WantedBy=multi-user.target
