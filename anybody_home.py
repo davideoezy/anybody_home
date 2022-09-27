@@ -55,7 +55,7 @@ if __name__ == "__main__":
     topic = "home/inside/sensor/presence"
 
     # Broker details:
-    server_address="192.168.0.10" 
+    server_address="192.168.0.115" 
     client = mqtt.Client("docker_anybody_home")
     client.connect(server_address, keepalive=60)
 
