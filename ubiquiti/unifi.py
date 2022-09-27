@@ -23,7 +23,7 @@ class API(object):
     _login_data = {}
     _current_status_code = None
 
-    def __init__(self, username: str="ubnt", password: str="ubnt", site: str="default", baseurl: str="https://unifi:8443", verify_ssl: bool=True):
+    def __init__(self, username: str="ubnt", password: str="ubnt", site: str="default", baseurl: str="https://192.168.0.10:8443", verify_ssl: bool=True):
         """
         Initiates tha api with default settings if none other are set.
 
