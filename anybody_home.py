@@ -55,13 +55,13 @@ if __name__ == "__main__":
     topic = "home/inside/sensor/presence"
 
     # Broker details:
-    server_address="192.168.0.115" 
+    server_address="192.168.0.10" 
     client = mqtt.Client("docker_anybody_home")
     client.connect(server_address, keepalive=60)
 
     while True:
 
-        api = Unifi_API(username="ubnt", password="ubnt", baseurl="https://192.168.0.115:8443", verify_ssl=False)
+        api = Unifi_API(username="ubnt", password="ubnt", baseurl="https://192.168.0.10:8443", verify_ssl=False)
         api.login()
         device_list = (api.list_clients(order_by="ip"))
         api.logout()
