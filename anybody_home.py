@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     while True:
 
-        api = Unifi_API(username="ubnt", password="ubnt", baseurl="https://192.168.0.10:8443", verify_ssl=False)
+        api = Unifi_API(username="ubnt", password="ubnt", baseurl="unifi.bomfunk.blue", verify_ssl=False)
         api.login()
         device_list = (api.list_clients(order_by="ip"))
         api.logout()
